@@ -1,0 +1,3 @@
+{
+  "/fullTextSearch": "/products?_q=:searchTerm"
+}

@@ -1,17 +1,31 @@
-import React from 'react';
+import React from "react";
+import ProductList from "./ProductList";
+import Home from "./Home";
+import FeaturedProducts from "./FeaturedProducts";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./About";
+import ProductDetails from "./ProductDetails";
+import ProductEdit from "./ProductEdit";
+import AddProduct from "./AddProduct";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<FeaturedProducts />} />
+          <Route path="about" element={<About />} />
+
+          <Route path="products" element={<ProductList />}>
+            <Route path=":id" element={<ProductDetails />} />
+            <Route path="edit/:id" element={<ProductEdit />} />
+          </Route>
+          <Route path="add" element={<AddProduct />} />
+        </Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

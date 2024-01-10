@@ -1,0 +1,27 @@
+h2 {
+    text-align:center
+}
+.about {
+    display:flex;
+    
+}
+
+    .image {
+        width: 80%;
+        height: auto;
+        flex:50%;
+        border: 1px solid #000;
+        border-radius: 8px;
+        background-color: black
+      }
+            
+.imageContainer {
+    display:flex;
+    border: 1px solid #ccc;
+    background-color: black;
+    
+  }
+.text {
+    flex: 50%;
+    margin-left: 20px
+}
